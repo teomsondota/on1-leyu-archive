@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>leyu — 日常中的一点自在</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background: #fafaf9;
+            color: #1e1e1e;
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Noto Sans SC', sans-serif;
+            line-height: 1.75;
+            padding: 2.5rem 1.25rem;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .page {
+            max-width: 680px;
+            width: 100%;
+            background: #ffffff;
+            border-radius: 28px;
+            padding: 3rem 2.2rem;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.02), 0 2px 6px rgba(0,0,0,0.02);
+            transition: padding 0.2s;
+        }
+
+        /* 标题层级 */
+        h1 {
+            font-weight: 520;
+            font-size: 2.2rem;
+            letter-spacing: -0.01em;
+            line-height: 1.2;
+            margin-bottom: 0.75rem;
+            color: #1a1a1a;
+        }
+
+        .subhead {
+            font-size: 1rem;
+            color: #6b6b6b;
+            margin-bottom: 2.4rem;
+            border-left: 3px solid #d4d4d4;
+            padding-left: 1rem;
+        }
+
+        h2 {
+            font-weight: 460;
+            font-size: 1.4rem;
+            margin: 2.4rem 0 1rem 0;
+            color: #2a2a2a;
+            letter-spacing: -0.01em;
+        }
+
+        h3 {
+            font-weight: 450;
+            font-size: 1.1rem;
+            margin: 1.5rem 0 0.5rem 0;
+            color: #333;
+        }
+
+        p {
+            margin-bottom: 1.2rem;
+            color: #3b3b3b;
+            font-size: 1rem;
+        }
+
+        .highlight {
+            background: #f2f0ed;
+            padding: 0 4px;
+            border-radius: 4px;
+            font-weight: 400;
+        }
+
+        /* 特点卡片列表 — 温和圆角，留白呼吸 */
+        .feature-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+            margin: 2rem 0 1.8rem 0;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.9rem;
+            padding: 0.9rem 1rem;
+            background: #f8f8f6;
+            border-radius: 20px;
+            border: 1px solid #ecece8;
+        }
+
+        .feature-marker {
+            flex-shrink: 0;
+            width: 8px;
+            height: 8px;
+            background: #b0aba1;
+            border-radius: 50%;
+            margin-top: 0.7rem;
+        }
+
+        .feature-text {
+            flex: 1;
+        }
+
+        .feature-text strong {
+            font-weight: 500;
+            color: #1a1a1a;
+        }
+
+        .feature-text p {
+            margin: 0.2rem 0 0 0;
+            font-size: 0.95rem;
+            color: #555;
+        }
+
+        /* 温和引号 */
+        .pull-quote {
+            font-style: normal;
+            background: #f4f3f0;
+            padding: 1.4rem 1.6rem;
+            border-radius: 24px;
+            margin: 2rem 0;
+            color: #3d3d3d;
+            font-size: 1.05rem;
+            border-left: 2px solid #c9c5bc;
+            line-height: 1.6;
+        }
+
+        .pull-quote::before {
+            content: "“";
+            font-size: 2.4rem;
+            line-height: 0.8;
+            color: #b0aba1;
+            display: block;
+            margin-bottom: -0.4rem;
+        }
+
+        /* 链接样式 */
+        a {
+            color: #3b3b3b;
+            text-decoration: none;
+            border-bottom: 1px solid #c9c5bc;
+            transition: border-color 0.2s, color 0.2s;
+            font-weight: 400;
+        }
+
+        a:hover {
+            border-bottom-color: #8f8a80;
+            color: #1e1e1e;
+        }
+
+        /* 底部签名 */
+        .footer-note {
+            margin-top: 3rem;
+            padding-top: 1.2rem;
+            font-size: 0.85rem;
+            color: #8b8b8b;
+            border-top: 1px solid #ecece8;
+            text-align: left;
+        }
+
+        .footer-note a {
+            color: #6b6b6b;
+            border-bottom: 1px solid #d4d4d4;
+        }
+
+        .footer-note a:hover {
+            color: #3b3b3b;
+        }
+
+        /* 响应式 */
+        @media (max-width: 500px) {
+            body {
+                padding: 1rem 0.75rem;
+            }
+
+            .page {
+                padding: 2rem 1.2rem;
+                border-radius: 20px;
+            }
+
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            .subhead {
+                font-size: 0.9rem;
+                padding-left: 0.75rem;
+            }
+
+            h2 {
+                font-size: 1.2rem;
+            }
+
+            .feature-item {
+                padding: 0.8rem 0.8rem;
+                border-radius: 16px;
+            }
+
+            .pull-quote {
+                padding: 1rem 1.2rem;
+                margin: 1.5rem 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <h1>日常缝隙里的光</h1>
+        <div class="subhead">从一段安静开启，关于 <span class="highlight">leyu</span> 的简单叙事</div>
+
+        <p>
+            你有没有留意过，生活中那些不经意的停顿——等水烧开的三分钟，窗外忽然安静的黄昏，或者只是晚上十点后房间里只亮着一盏台灯的时刻。这些片段单独看没什么，但它们拼在一起，构成了一个人真正属于自己的那部分时间。<span class="highlight">leyu</span> 这个名字，最初就是从这种感受里长出来的。
+        </p>
+
+        <p>
+            不是要提供什么宏大的解决方案，更像是一个愿意陪你坐下来、什么也不急着催促的空间。你可以带着手机也好、电脑也罢，或者就只是空白的大脑——在这里，节奏可以稍微慢一点，事情可以一件一件来。
+        </p>
+
+        <h2>一些朴素的特点</h2>
+
+        <div class="feature-grid">
+            <div class="feature-item">
+                <div class="feature-marker"></div>
+                <div class="feature-text">
+                    <strong>界面干净，没有多余装饰</strong>
+                    <p>打开就是内容本身，不被广告或弹窗打断。留白是呼吸用的。</p>
+                </div>
+            </div>
+            <div class="feature-item">
+                <div class="feature-marker"></div>
+                <div class="feature-text">
+                    <strong>功能直接，不绕弯子</strong>
+                    <p>想做的事情，两三次点击就能完成。复杂隐藏在背后。</p>
+                </div>
+            </div>
+            <div class="feature-item">
+                <div class="feature-marker"></div>
+                <div class="feature-text">
+                    <strong>安静陪伴，不制造焦虑</strong>
+                    <p>没有排行榜，没有催促通知，也不追着你要反馈。你来了就好。</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="pull-quote">
+            好的工具往往不是最响亮的那个，而是你用完之后几乎感觉不到它的存在——它已经融进了你做事的节奏里。
+        </div>
+
+        <h2>可以用在哪些场景</h2>
+        <p>
+            午休间隙想整理一下思绪、写几行日记或者随手记下忽然冒出来的想法；晚上躺下前，把今天值得记住的一两件事轻轻放好；又或者是工作到一半需要短暂抽离，让视线和头脑都休息几分钟——这些都是 <a href="https://on1-leyu.com">leyu</a> 在的日常角落。
+        </p>
+
+        <p>
+            它不挑设备，浏览器打开就能用，也适合那些不太喜欢装太多应用的人。没有特别陡峭的学习成本，也没有必须完成的“新手任务”。你想怎么用，就怎么用。
+        </p>
+
+        <h2>FAQ 摘要</h2>
+        <p>
+            <strong>需要注册才能用吗？</strong><br>
+            大部分基础功能无需注册即可使用。如果想在多个设备之间同步内容，注册一个轻量账户就够了，流程很短。
+        </p>
+        <p>
+            <strong>数据安全吗？</strong><br>
+            传输和存储都采用了常规加密，团队不会查看你的私人内容。你也可以随时导出自已的数据。
+        </p>
+        <p>
+            <strong>会收费吗？</strong><br>
+            目前核心功能完全免费，未来可能会增加一些可选的增值服务，但基础体验始终免费。
+        </p>
+
+        <p style="margin-top: 2rem;">
+            说到底，<span class="highlight">leyu</span> 只是一个安静的角落。它不会改变你的生活，但也许能让某些瞬间变得稍微轻松一点点。如果这也正是你偶尔需要的东西，不妨来坐坐。
+        </p>
+
+        <div class="footer-note">
+            <span>了解 <a href="https://on1-leyu.com" target="_blank" rel="noopener noreferrer">leyu</a> · 一个平凡而自在的角落</span>
+            <span style="display: block; margin-top: 6px; opacity: 0.7;">3f45151094e0a37d</span>
+        </div>
+    </div>
+</body>
+</html>
